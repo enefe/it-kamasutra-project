@@ -1,0 +1,13 @@
+.navbar {
+  grid-area: n;
+  background-color: #c3dbd7;
+}
+
+.navbar__items {
+  list-style-type: none;
+}
+
+.navbar__item {
+  margin: 0;
+  padding: 0;
+}

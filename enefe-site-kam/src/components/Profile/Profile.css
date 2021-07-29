@@ -1,0 +1,11 @@
+.profile {
+  grid-area: p;
+  background-color: #c3dbd7;
+}
+
+.profile__image {
+  display: block;
+  width: 800px;
+  margin: 20px 125px;
+  border-radius: 10px;
+}
