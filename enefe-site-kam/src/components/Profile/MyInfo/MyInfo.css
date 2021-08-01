@@ -1,8 +1,8 @@
-.profile {
-
+.my-info {
+  margin: 10px;
 }
 
-.profile__image {
+.my-info__image {
   display: block;
   width: 800px;
   margin: 20px 125px;

@@ -1,6 +1,8 @@
 .navbar {
   grid-area: n;
   background-color: #c3dbd7;
+  border-radius: 15px;
+  border: rgba(133, 105, 160, .8) solid 1.5px;
 }
 
 .navbar__items {
@@ -8,6 +10,12 @@
 }
 
 .navbar__item {
+  text-decoration: none;
+  color: black;
   margin: 0;
   padding: 0;
+}
+
+.navbar__item.active {
+  color:blueviolet;
 }

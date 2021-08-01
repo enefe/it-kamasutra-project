@@ -6,10 +6,16 @@
   display: grid;
   grid-template-areas:
   "h h"
-  "n p";
+  "n c";
   grid-template-rows: 100px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 20px;
   margin: 0px auto;
 }
 
+.app__content {
+  grid-area: c;
+  background-color: #c3dbd7;
+  border-radius: 15px;
+  border: rgba(133, 105, 160, .8) solid 1.5px;
+}
