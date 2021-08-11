@@ -1,32 +1,37 @@
 import React from 'react';
+import { sendNewMessageCreator, updateNewMessageBodyCreator } from '../../redux/reducers/dialogsReducer';
 import './Dialogs.css';
 import Human from './Human/Human';
 import Message from './Message/Message';
 
-const Dialogs = () => {
+const Dialogs = (props) => {
 
-  let people = [
-    {name: 'Сёма', id: 1},
-    {name: 'Маша', id: 2},
-    {name: 'Ден', id: 3},
-    {name: 'Даня', id: 4},
-    {name: 'Миша', id: 5},
-    {name: 'Макс', id: 6},
-  ]
+  const newMessageBody = props.dialogsPage.newMessageBody;
 
-  let messages = [
-    {message: 'Привет', id: 1},
-    {message: 'Как дела?', id: 2},
-    {message: 'Пойдешь сегодня гулять?', id: 3},
-  ]
+  const onSendMessageClick = () => {
+    props.dispatch(sendNewMessageCreator());
+  }
+
+  const onNewMessageChange = (e) => {
+    const body = e.target.value;
+    props.dispatch(updateNewMessageBodyCreator(body));
+  }
 
   return (
     <div className="dialogs">
         <div className="dialogs__people">
-          { people.map( h => <Human name={h.name} id={h.id} /> ) }
+          { props.dialogsPage.people.map( h => <Human name={h.name} id={h.id} /> ) }
         </div>
         <div className="dialogs__messages">
-          { messages.map( m => <Message message={m.message} /> ) }
+          { props.dialogsPage.messages.map( m => <Message message={m.message} /> ) } 
+        </div>
+        <div>
+          <div>
+            <textarea onChange={onNewMessageChange} value={newMessageBody} placeholder='Введите сообщение' ></textarea>
+          </div>
+          <div>
+            <button onClick={onSendMessageClick} >Отправить</button>
+          </div>
         </div>
     </div>
   );
